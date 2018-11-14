@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+p{
+    margin:50px auto;
+    text-align:center;
+}
+table{
+    margin:100px auto;
+    border:2px solid red;
+}
+tr,td{
+    border:1px solid black;
+    text-align:center;
+}    
+    </style>
+</head>
+<body>
+    <p>近期目标 latex  vim  apache  mysql  js  php</p>
+    <form action="writeDb.php" method="post">
+    <table>
+        <tr>
+            <td>日期</td>
+            <td><input type='text' name="date"></td>
+            <td><span id="dateMsg">格式 0000-00-00</span></td>
+        </tr>
+        <tr>
+            <td>课程</td>
+            <td>
+                <select name="class">
+                    <option name="bash">bash</option>
+                    <option name="bash">linux就该这样学</option>
+                    <option name="vim">vim</option>
+                    <option name="php">php</option>
+                    <option name="js">js</option>
+                </select>
+            </td>
+            <td><span id="classMsg">请在下拉单中选择</span></td>
+        </tr>
+        <tr>
+            <td>进度</td>
+            <td><input type='text' name="process" ></td>
+            <td><span id="processMsg">第几页</span></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="submit" value="submit" id="submit"></td>
+        </tr>
+    </table>
+    </form>
+    <script>
+    </script>
+</body>
+</html>
