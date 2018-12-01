@@ -15,25 +15,25 @@ table{
 tr,td{
     border:1px solid black;
     text-align:center;
-}    
+    margin:5px;
+}
+input[name="query"]{
+    width:95%;
+}
+
     </style>
 </head>
 <body>
     <p>近期目标 latex  vim  apache  mysql  js  php</p>
-    <form action="add.php" method="post">
     <table>
-        <tr>
-            <td>日期</td>
-            <td><input type='text' name="date"></td>
-            <td><span id="dateMsg">格式 0000-00-00,空白就默认单天</span></td>
-        </tr>
+        <form id="form_insert">
         <tr>
             <td>课程</td>
             <td>
                 <select name="class">
-                    <option name="latex">india latex 读本</option>
-                    <option name="bash">linux就该这样学</option>
-                    <option name="vim">vim</option>
+                    <option name="india latex 读本">india latex 读本</option>
+                    <option name="linux就该这样学">linux就该这样学</option>
+                    <option name="learning vim the hard way">learning vim the hard way</option>
                     <option name="php">php</option>
                     <option name="js">js</option>
                 </select>
@@ -46,11 +46,28 @@ tr,td{
             <td><span id="processMsg">第几页</span></td>
         </tr>
         <tr>
-            <td colspan="3"><input type="submit" value="submit" id="submit"></td>
+            <td colspan="3"><input type="button" value="latest process" id="latest_process"></td>
         </tr>
+        </form>
+    <tr>
+        <td><input id="clean" type="button" value="clean" ></td>
+        <form id="form_query">
+        <td>
+                <select name="class">
+                    <option name="all">all</option>
+                    <option name="india latex 读本">india latex 读本</option>
+                    <option name="linux就该这样学">linux就该这样学</option>
+                    <option name="learning vim the hard way">learning vim the hard way</option>
+                    <option name="php">php</option>
+                    <option name="js">js</option>
+                </select>       
+        </td>
+        <td><input type="button" value="select" id="query"></td>
+        </form>
+    </tr>
     </table>
-    </form>
-    <script>
+    <p id="show_info"></p>
+    <script src="ajax.js">    
     </script>
 </body>
 </html>

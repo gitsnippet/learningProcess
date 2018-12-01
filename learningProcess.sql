@@ -1,10 +1,13 @@
-CREATE DATABASE `learningProcess`;
+DROP DATABASE IF EXISTS `learningProcess`;
+CREATE DATABASE IF NOT EXISTS `learningProcess`;
 USE `learningProcess`;
-CREATE TABLE `process` (
-      `id` int(4) unsigned NOT NULL AUTO_INCREMENT,
-      `time` date NOT NULL COMMENT '日期',
-      `class` varchar(20) NOT NULL COMMENT '课程的名称',
-      `process` varchar(100) NOT NULL COMMENT '课程的进度',
-      PRIMARY KEY (`id`),
-      UNIQUE KEY  (`id`,`time`,`class`,`process`)
+DROP TABLE IF EXISTS  `process`;
+
+CREATE TABLE IF NOT EXISTS `process`(
+    `id` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `date` DATE NOT NULL COMMENT '日期',
+    `time` TIMESTAMP NOT NULL COMMENT '时间',
+    `class` VARCHAR(20) NOT NULL COMMENT '课程的名称',
+    `process` VARCHAR(100) NOT NULL COMMENT '课程的进度',
+    PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
