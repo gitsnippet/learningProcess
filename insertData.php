@@ -7,12 +7,14 @@ $process = trim($_POST["process"]);
 $dsn = "mysql:host=localhost;dbname=learningProcess";
 $con = new PDO($dsn,"root","xyzzy");
 
-$query ="insert into process(`date`,`time`,`class`,`process`) 
-             values('$date','$time','$class','$process')"; 
-if($con->query($query)){
+$query ="INSERT INTO `process` (`date`,`time`,`class`,`process`) 
+             VALUES('$date','$time','$class','$process')"; 
+if($con->query($query))
+{
     echo "成功写入数据库";
 }
-else{
+else
+{
     print_r($con->errorInfo());
 }
 ?>

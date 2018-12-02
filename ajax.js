@@ -2,13 +2,13 @@ function ready(xmlHttp)
 {
 if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
     {
-        document.getElementById("show_info").innerHTML = xmlHttp.responseText;
+        document.getElementById("showInfo").innerHTML = xmlHttp.responseText;
     }
 }
 
-function sendData()
+function insertData()
 {
-    var formData = new FormData( document.querySelector("#form_insert") );
+    var formData = new FormData( document.querySelector("#form_insertData") );
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("post", "insertData.php",true);
     xmlHttp.send(formData);
@@ -18,8 +18,8 @@ function sendData()
         }
 }
 
-ob_insertData = document.getElementById("latest_process");
-ob_insertData.addEventListener("click",sendData);
+ob_insertData = document.getElementById("insertData");
+ob_insertData.addEventListener("click",insertData);
 
 
 function cleanData()
@@ -33,7 +33,7 @@ function cleanData()
         }
 }
 
-ob_cleanData = document.getElementById("clean");
+ob_cleanData = document.getElementById("cleanData");
 ob_cleanData.addEventListener("click",cleanData);
 
 function show(xmlHttp){
@@ -61,7 +61,7 @@ function show(xmlHttp){
 
 function selectData()
 {
-    var formData = new FormData( document.querySelector("#form_query") );
+    var formData = new FormData( document.querySelector("#form_selectData") );
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("post", "selectData.php",true);
     xmlHttp.send(formData);
@@ -71,7 +71,7 @@ function selectData()
         }
 }
 
-ob_selectData = document.getElementById("query");
+ob_selectData = document.getElementById("selectData");
 ob_selectData.addEventListener("click",selectData);
 
 

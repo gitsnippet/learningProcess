@@ -1,20 +1,27 @@
 <?php
 $dsn = "mysql:host=localhost;dbname=learningProcess";
-$con = new PDO($dsn,"root","xyzzy");
+$con = new pdo($dsn,"root","xyzzy");
 
-$query = "create table tmp(select  * from process  
-                 where time in (select max(time) from process  
-                                group by class,date));
-           drop table process;
-           rename table tmp to process; ";
+$query = "CREATE TABLE `tmp`(SELECT  * FROM `process`  
+                 WHERE `time` IN (SELECT MAX(`time`) FROM `process`
+                 GROUP BY `class`,`date`,
+                 ORDER BY `class`,`date`));
+           DROP TABLE `process`;
+           RENAME TABLE `tmp` TO `process`; 
+           ALTER TABLE `process` DROP `id`;
+           ALTER TABLE `process` ADD `id` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT=1 PRIMARY KEY;
+           ALTER TABLE `process` MODIFY `id` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT FIRST;
+          ";
 
 $result = $con->prepare($query);
 $result->execute();
-$code = $result->errorCode();
-if($code == "00000"){
+$code = $result->errorcode();
+if($code == "00000")
+{
     echo "clean the table success";
 }
-else{
+else
+{
     var_dump($result->errorInfo());
 }
 ?>

@@ -1,0 +1,22 @@
+
+sql
+最佳实践
+http://hwy.local/wp/?p=5108<a href="http://hwy.local/wp/?p=5108">最佳实践</a>
+
+html
+没有输入date time的地方，html调用now() time() 函数自动写入当时的日期
+
+js
+php js之间的数据传递
+1.js 到php
+js side:formData 
+php side:$_POST 数组
+
+2.php到js
+php side: json_encode()
+js side: JSON.parse(xmlHttp.responseText)
+
+如何增加节点？
+如何将json用table 展示出来
+php读写mysql 
+
