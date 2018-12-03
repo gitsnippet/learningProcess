@@ -4,7 +4,7 @@ $con = new pdo($dsn,"root","xyzzy");
 
 $query = "CREATE TABLE `tmp`(SELECT  * FROM `process`  
                  WHERE `time` IN (SELECT MAX(`time`) FROM `process`
-                 GROUP BY `class`,`date`,
+                 GROUP BY `class`,`date`
                  ORDER BY `class`,`date`));
            DROP TABLE `process`;
            RENAME TABLE `tmp` TO `process`; 

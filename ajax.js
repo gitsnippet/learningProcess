@@ -41,6 +41,14 @@ function show(xmlHttp){
         {
             data = JSON.parse(xmlHttp.responseText);
             table_show = "<table>";
+            table_show += "<tr>";
+            table_show += "<td>" + "id" + "</td>";
+            table_show += "<td>" + "date" + "</td>";
+            table_show += "<td>" + "time" + "</td>";
+            table_show += "<td>" + "class" + "</td>";
+            table_show += "<td>" + "process" + "</td>";
+            table_show += "</tr>";
+
             for(i=0;i<data.length;i++){
                 table_show += "<tr>";
                 table_show += "<td>" + data[i][0] + "</td>";
