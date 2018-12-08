@@ -25,16 +25,31 @@
 <body>
     <p>近期目标 latex  vim  apache  mysql  js  php</p>
     <table>
+        <form id="form_createClass">
+            <tr>
+                <td>create new class</td>
+                <td>
+                    <input type="text" name="newClass">
+                    <td><input id="createClass" type="button" value="createClass"></td>
+                </td>
+            </tr>
+        </form>
         <form id="form_insertData">
             <tr>
                 <td>课程</td>
                 <td>
                     <select name="class">
-                        <option value="india latex 读本">india latex 读本</option>
-                        <option value="linux就该这样学">linux就该这样学</option>
-                        <option value="learning vim the hard way">learning vim the hard way</option>
-                        <option value="php">php</option>
-                        <option value="js">js</option>
+                        <?php 
+                            $dsn = "mysql:host=localhost;dbname=learningProcess";
+                            $con = new PDO($dsn,"root","xyzzy");
+                            $sql = "select * from class";
+                            $stmt = $con->prepare($sql);
+                            $stmt->execute();
+                            $res = $stmt->fetchAll();
+                            for($i=0;$i<count($res);$i++){
+                        ?>
+                            <option><?php    echo $res[$i][2]; ?></option>
+                            <?php  }  ?>
                     </select>
                 </td>
                 <td>

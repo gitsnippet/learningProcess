@@ -82,4 +82,18 @@ function selectData()
 ob_selectData = document.getElementById("selectData");
 ob_selectData.addEventListener("click",selectData);
 
+function createClass(){
+    var formData =  new FormData( document.querySelector("#form_createClass") );
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("post", "createClass.php",true);
+    xmlHttp.send(formData);  
+    xmlHttp.onreadystatechange = function()
+        {
+            ready(xmlHttp);
+        }
+}
+
+ob_createClass = document.getElementById("createClass");
+ob_createClass.addEventListener("click",createClass);
+
 
