@@ -24,3 +24,6 @@ js side: JSON.parse(xmlHttp.responseText)
 如何将json用table 展示出来
 php读写mysql 
 
+pushDb -n learningProcess
+
+
