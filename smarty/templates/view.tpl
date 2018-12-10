@@ -61,14 +61,11 @@
         <td><input id="cleanData" type="button" value="clean" ></td>
         <form id="form_selectData">
         <td>
-                <select name="class">
-                    <option value="all">all</option>
-                    <option value="india latex 读本">india latex 读本</option>
-                    <option value="linux就该这样学">linux就该这样学</option>
-                    <option value="learning vim the hard way">learning vim the hard way</option>
-                    <option value="php">php</option>
-                    <option value="js">js</option>
-                </select>       
+            <select name="class">
+                {foreach $res as $value}
+                    <option>{$value['class']}</option>
+                {/foreach}
+            </select>
         </td>
         <td><input type="button" value="select" id="selectData"></td>
         </form>

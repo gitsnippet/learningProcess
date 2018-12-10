@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2018-12-09 08:55:14
+/* Smarty version 3.1.34-dev-7, created on 2018-12-10 21:03:34
   from '/var/www/html/learningProcess/smarty/templates/view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5c0c67f2b07dc6_47108191',
+  'unifunc' => 'content_5c0e6426d8e1c3_09228538',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c813f8adc96e16ce2dc79c5e1abe444cb8143ad' => 
     array (
       0 => '/var/www/html/learningProcess/smarty/templates/view.tpl',
-      1 => 1544316734,
+      1 => 1544446997,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c0c67f2b07dc6_47108191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c0e6426d8e1c3_09228538 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,14 +92,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <td><input id="cleanData" type="button" value="clean" ></td>
         <form id="form_selectData">
         <td>
-                <select name="class">
-                    <option value="all">all</option>
-                    <option value="india latex 读本">india latex 读本</option>
-                    <option value="linux就该这样学">linux就该这样学</option>
-                    <option value="learning vim the hard way">learning vim the hard way</option>
-                    <option value="php">php</option>
-                    <option value="js">js</option>
-                </select>       
+            <select name="class">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['res']->value, 'value');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->value) {
+?>
+                    <option><?php echo $_smarty_tpl->tpl_vars['value']->value['class'];?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
         </td>
         <td><input type="button" value="select" id="selectData"></td>
         </form>
